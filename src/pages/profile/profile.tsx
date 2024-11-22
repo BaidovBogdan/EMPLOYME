@@ -17,7 +17,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="flex flex-col items-center h-full w-full ">
+    <div className="flex flex-col items-center h-full w-full">
       <div className="flex flex-col items-center gap-2 mt-32">
         <div className="w-24 h-24 rounded-full bg-[#D9D9D9]"></div>
         <span className="text-xl text-center">Profile setting</span>

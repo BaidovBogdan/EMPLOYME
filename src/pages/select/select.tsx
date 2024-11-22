@@ -6,7 +6,7 @@ const BtnSmall = ({ children }: { children: React.ReactNode }) => {
   return (
     <button
       onClick={() => navigate('/main')}
-      className="p-1 bg-[#00AEEF] w-[155px] rounded-xl text-white"
+      className="p-1 bg-[#00AEEF] w-[155px] rounded-xl text-white hover:bg-[#0F1238]"
     >
       {children}
     </button>
@@ -17,7 +17,7 @@ const BtnBig = ({ children }: { children: React.ReactNode }) => {
   return (
     <button
       onClick={() => navigate('/main')}
-      className="p-1 bg-[#00AEEF] w-52 rounded-xl text-white text-left"
+      className="p-1 bg-[#00AEEF] w-52 rounded-xl text-white text-left hover:bg-[#0F1238]"
     >
       {children}
     </button>

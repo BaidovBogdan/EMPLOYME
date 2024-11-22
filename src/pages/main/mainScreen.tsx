@@ -3,8 +3,12 @@ import Kulikovskiy from '../../../public/kulikovskiy.png';
 import Florist from '../../../public/florist.png';
 import Bishkek from '../../../public/bishkek.png';
 import DropdownMenu from '../../components/menu';
+import BgMainScreen from '../../../public/bgChat.png';
+import { useState } from 'react';
+import Filter from '../../components/filter';
 
 export default function MainScreen() {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   interface CardJobProps {
     bgColor: string;
     img: string;
@@ -19,7 +23,7 @@ export default function MainScreen() {
         >
           <img src={img} alt="" />
           <div className="flex flex-col gap-[1px] text-left">
-            <span className="text-xl">Marketing Analyst </span>
+            <span>Marketing Analyst </span>
             <span>BrightWave Innovations</span>
             <span className="text-xs">Location: Bishkek </span>
             <span className="text-xs">
@@ -45,8 +49,18 @@ export default function MainScreen() {
       </div>
     );
   };
+
   return (
-    <div className="flex flex-col h-full w-full mt-20">
+    <div
+      className="relative flex flex-col h-full w-full mt-20"
+      style={{
+        backgroundImage: `url(${BgMainScreen})`,
+        backgroundPosition: 'center 50%',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        backgroundSize: 'auto',
+      }}
+    >
       <header className="flex justify-between w-full items-center p-4">
         <div>
           <div className="text-3xl font-bold text-center">
@@ -67,16 +81,30 @@ export default function MainScreen() {
           placeholder="Jobs, keywords..."
           className="bg-[#F0ECEC] rounded-[20px] p-2 w-2/3"
         />
-        <button className="p-1 bg-[#00AEEF] w-[155px] rounded-2xl text-white">
+        <button
+          className="p-1 bg-[#00AEEF] w-[155px] rounded-2xl text-white"
+          onClick={() => setIsOpen((prev: boolean) => !prev)}
+        >
           Adjust Filters
         </button>
+        {isOpen && <Filter />}
       </div>
-      <div className="flex flex-col gap-1 items-center">
+      <div className="flex flex-col gap-2 items-center">
         <CardJob bgColor="#9519AD" img={Kulikovskiy} key={1} />
         <CardJob bgColor="#0068AC" img={Bishkek} key={2} />
         <CardJob bgColor="#C5A17C" img={Florist} key={3} />
       </div>
-      <Footer />
+      <div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Footer />
+      </div>
     </div>
   );
 }

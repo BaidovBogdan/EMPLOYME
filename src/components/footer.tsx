@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { CiSettings } from 'react-icons/ci';
-import { FiHome } from 'react-icons/fi';
-import { VscSearch } from 'react-icons/vsc';
+import Home from '../../public/Home.png';
+import Chat from '../../public/Chat.png';
+import Profile from '../../public/Profile.png';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
@@ -33,38 +33,38 @@ const Footer = () => {
 
   return (
     <footer className="fixed bottom-0 w-full bg-[#0F1238] flex justify-center px-4 py-8 border-t-4">
-      <div className="flex justify-around w-4/5 bg-white p-4 rounded-[28.35px]">
+      <div className="flex justify-around w-4/5 p-4 rounded-[28.35px]">
         <button
           onClick={() => handleButtonClick('home')}
           className={`flex justify-center items-center w-8 h-8 rounded-full shadow-md transition-all duration-300 ${
             activeButton === 'home'
-              ? 'bg-white text-[#28A8E0] -translate-y-8 bor'
-              : 'bg-white text-[#0F1238]'
+              ? ' text-[#28A8E0] -translate-y-8 bor'
+              : ' text-white'
           }`}
         >
-          <FiHome />
+          <img src={Home} alt="" />
         </button>
 
         <button
           onClick={() => handleButtonClick('chat')}
           className={`flex justify-center items-center w-8 h-8 rounded-full shadow-md transition-all duration-300 ${
             activeButton === 'chat'
-              ? 'bg-white text-[#28A8E0] -translate-y-8 bor'
-              : 'bg-white text-[#0F1238]'
+              ? ' text-[#28A8E0] -translate-y-8 bor'
+              : ' text-white'
           }`}
         >
-          <VscSearch />
+          <img src={Chat} alt="" />
         </button>
 
         <button
           onClick={() => handleButtonClick('profile')}
           className={`flex justify-center items-center w-8 h-8 rounded-full shadow-md transition-all duration-300 ${
             activeButton === 'profile'
-              ? 'bg-white text-[#28A8E0] -translate-y-8 bor'
-              : 'bg-white text-[#0F1238]'
+              ? ' text-[#28A8E0] -translate-y-8 bor'
+              : ' text-white'
           }`}
         >
-          <CiSettings />
+          <img src={Profile} alt="" />
         </button>
       </div>
     </footer>
