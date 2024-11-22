@@ -44,10 +44,19 @@ export default function Chat() {
               <span className="text-[#0F1238]">CHATS</span>
             </b>
           </div>
+          <br />
           <div>
             <span className="text-[#00AEEF]">Messages from agency</span>
           </div>
+          <br />
         </header>
+        <div className="flex justify-center">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="rounded-2xl p-2 border-2 border-[#0F1238]"
+          />
+        </div>
         <div className="flex flex-col mt-10 items-center gap-2">
           <CardJob
             textColor="#9519AD"
