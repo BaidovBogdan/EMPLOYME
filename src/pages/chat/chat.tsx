@@ -54,7 +54,7 @@ export default function Chat() {
           <input
             type="text"
             placeholder="Search..."
-            className="rounded-2xl p-2 border-2 border-[#0F1238]"
+            className="bg-[#F0ECEC] rounded-[20px] p-2 w-2/3"
           />
         </div>
         <div className="flex flex-col mt-10 items-center gap-2">
